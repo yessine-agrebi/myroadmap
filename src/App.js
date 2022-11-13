@@ -6,7 +6,7 @@ import Home from './components/Home';
 function App() {
   return (
     <div className="conatiner flex flex-col justify-center items-center gap-5">
-      <Router>
+      <Router basename="/myroadmap">
       <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
