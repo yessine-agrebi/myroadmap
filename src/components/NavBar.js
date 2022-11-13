@@ -1,77 +1,47 @@
-import { useState } from "react";
-import {Link} from 'react-router-dom'
-export default function NavBar() {
-    const [navbar, setNavbar] = useState(false);
+import React, { useState } from 'react';
+import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
-    return (
-        <nav className="w-full bg-white shadow">
-            <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
-                <div>
-                    <div className="flex items-center justify-between py-3 md:py-5 md:block">
-                        <Link to="/">
-                            <h2 className="text-2xl font-bold">MyRoadmap</h2>
-                        </Link>
-                        <div className="md:hidden">
-                            <button
-                                className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
-                                onClick={() => setNavbar(!navbar)}
-                            >
-                                {navbar ? (
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        className="w-6 h-6"
-                                        viewBox="0 0 20 20"
-                                        fill="currentColor"
-                                    >
-                                        <path
-                                            fillRule="evenodd"
-                                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                            clipRule="evenodd"
-                                        />
-                                    </svg>
-                                ) : (
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        className="w-6 h-6"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                        strokeWidth={2}
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            d="M4 6h16M4 12h16M4 18h16"
-                                        />
-                                    </svg>
-                                )}
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div
-                        className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
-                            navbar ? "block" : "hidden"
-                        }`}
-                    >
-                        <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                            <li className="text-gray-600 hover:text-blue-600">
-                                <Link to="/">Home</Link>
-                            </li>
-                            <li className="text-gray-600 hover:text-blue-600">
-                                <Link to="/frontend">Frontend</Link>
-                            </li>
-                            <li className="text-gray-600 hover:text-blue-600">
-                                <Link to="/backend">Backend</Link>
-                            </li>
-                            <li className="text-gray-600 hover:text-blue-600">
-                                <Link to="/projects">Projects</Link>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    );
-}
+const NavBar = () => {
+  const [nav, setNav] = useState(false);
+
+  const handleNav = () => {
+    setNav(!nav);
+  };
+
+  return (
+    <div className='flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white'>
+      <h1 className='w-full text-3xl font-bold text-[#00df9a]'>MyRoadmap</h1>
+      <ul className='hidden md:flex'>
+        <li className='p-4'>
+            <Link to="/">Home</Link>
+        </li>
+        <li className='p-4'>
+            <Link to="/frontend">Frontend</Link>
+        </li>
+        <li className='p-4'>
+        <Link to="/backend">Backend</Link>
+        </li>
+        <li className='p-4'>
+        <Link to="/projects">Projects</Link>
+        </li>
+        <li className='p-4'>
+        <Link to="/algorithms">Algorithms</Link>
+        </li>
+      </ul>
+      <div onClick={handleNav} className='block md:hidden'>
+          {nav ? <AiOutlineClose size={20}/> : <AiOutlineMenu size={20} />}
+      </div>
+      <ul className={nav ? 'fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500' : 'ease-in-out duration-500 fixed left-[-100%]'}>
+        <h1 className='w-full text-3xl font-bold text-[#00df9a] m-4'>MyRoadmap</h1>
+          <li className='p-4 border-b border-gray-600'>Home</li>
+          <li className='p-4 border-b border-gray-600'>Frontend</li>
+          <li className='p-4 border-b border-gray-600'>Backend</li>
+          <li className='p-4 border-b border-gray-600'>Projects</li>
+          <li className='p-4'>Algorithms</li>
+      </ul>
+    </div>
+  );
+};
+
+export default NavBar;

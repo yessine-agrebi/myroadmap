@@ -3,7 +3,7 @@ const Card = ({course}) => {
   return (
 <div className="w-full mt-3 bg-slate-200 rounded-lg shadow-lg lg:max-w-sm">
             <img
-                className="object-cover w-full h-48"
+                className="object-cover w-full h-48 rounded-lg"
                 src={course.image}
                 alt={course.title}
             />
@@ -15,7 +15,7 @@ const Card = ({course}) => {
                     {course.description}
                 </p>
                 <button className="px-4 py-2 text-sm text-blue-100 bg-blue-500 rounded shadow">
-                    <a href={course.link}>Start Learning</a>
+                    <a href={course.link} target="_blank" rel='noreferrer'>Start Learning</a>
                 </button>
             </div>
             </div>

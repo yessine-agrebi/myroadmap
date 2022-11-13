@@ -1,10 +1,10 @@
 import React from 'react'
 import Card from './Card';
-import {frontend} from '../data/frontend';
-const Frontend = () => {
+import {backend} from '../data/backend';
+const Backend = () => {
   return (
     <div className='flex flex-col items-center justify-center gap-5'>
-      {frontend ? frontend.map((course, index) => {
+      {backend ? backend.map((course, index) => {
           return (
             
             <Card key={index} course={course} />
@@ -14,4 +14,4 @@ const Frontend = () => {
   )
 }
 
-export default Frontend
+export default Backend
