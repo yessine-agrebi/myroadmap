@@ -3,6 +3,7 @@ import Front from '../assets/front.png'
 import Back from '../assets/back.jpg'
 import Projects from '../assets/project.png'
 import Algo from '../assets/algo.png'
+import { Link } from 'react-router-dom';
 
 const Categories = () => {
   return (
@@ -11,22 +12,30 @@ const Categories = () => {
       <div className='w-full shadow-xl flex flex-col my-4 rounded-lg hover:scale-105 duration-300'>
               <img className='w-full rounded-lg' src={Front} alt="/" />
               <h2 className='text-2xl font-bold text-center py-8'>Frontend Develoment</h2>
-              <button className='bg-[#00df9a] w-[200px] rounded-md font-medium my-8 mx-auto px-6 py-3 text-white'>Start Learning</button>
+              <button className='bg-[#00df9a] w-[200px] rounded-md font-medium my-8 mx-auto px-6 py-3 text-white'>
+              <Link to="/frontend">Start Now</Link>
+              </button>
           </div>
           <div className='w-full shadow-xl flex flex-col my-4 rounded-lg hover:scale-105 duration-300'>
               <img className='w-full rounded-lg' src={Back} alt="/" />
               <h2 className='text-2xl font-bold text-center py-8'>Backend Development</h2>
-              <button className='bg-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3 text-white'>Start Learning</button>
+              <button className='bg-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3 text-white'>
+              <Link to="/backend">Start Now</Link>
+              </button>
           </div>
           <div className='w-full shadow-xl flex flex-col my-4 rounded-lg hover:scale-105 duration-300'>
               <img className='w-full rounded-lg' src={Projects} alt="/" />
               <h2 className='text-2xl font-bold text-center py-8'>Projects Tutorials</h2>
-              <button className='bg-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3 text-white'>Start Learning</button>
+              <button className='bg-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3 text-white'>
+              <Link to="/projects">Start Now</Link>
+              </button>
           </div>
           <div className='w-full shadow-xl flex flex-col my-4 rounded-lg hover:scale-105 duration-300'>
               <img className='w-full rounded-lg' src={Algo} alt="/" />
               <h2 className='text-2xl font-bold text-center py-8'>Algorithms</h2>
-              <button className='bg-[#00df9a] w-[200px] rounded-md font-medium  mx-auto my-6 px-6 py-3 text-white'>Start Learning</button>
+              <button className='bg-[#00df9a] w-[200px] rounded-md font-medium  mx-auto my-6 px-6 py-3 text-white'>
+              <Link to="/algorithms">Start Now</Link>
+              </button>
           </div>
       </div>
     </div>

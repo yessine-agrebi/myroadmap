@@ -3,6 +3,7 @@ import Backend from './components/Backend';
 import NavBar from './components/NavBar';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Hero from './components/Hero';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path="/backend" element={<Backend />} />
         </Routes>
       </Router>
+      <Footer />
     </div>
   );
 }

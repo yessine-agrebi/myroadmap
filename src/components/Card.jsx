@@ -1,7 +1,7 @@
 import React from 'react'
 const Card = ({course}) => {
   return (
-<div className="w-full mt-3 bg-slate-200 rounded-lg shadow-lg lg:max-w-sm">
+<div className="md:w-full w-5/6 mt-3 bg-slate-200 rounded-lg shadow-lg lg:max-w-sm">
             <img
                 className="object-cover w-full h-48 rounded-lg"
                 src={course.image}
