@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Hero from './components/Hero';
 import Footer from './components/Footer';
 import ReactGA from 'react-ga';
+import Algorithms from './components/Algorithms';
 
 const TRACKING_ID = "G-PEHJ803RZ5";
 ReactGA.initialize(TRACKING_ID);
@@ -23,6 +24,7 @@ function App() {
           <Route path="/" element={<Hero />} />
           <Route path="/frontend" element={<Frontend />} />
           <Route path="/backend" element={<Backend />} />
+          <Route path="/algorithms" element={<Algorithms />} />
         </Routes>
       </Router>
       <Footer />
