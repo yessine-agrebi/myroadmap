@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import Frontend from './components/Frontend';
 import Backend from './components/Backend';
 import NavBar from './components/NavBar';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, withRouter } from 'react-router-dom';
 import Hero from './components/Hero';
 import Footer from './components/Footer';
 import ReactGA from 'react-ga';
@@ -32,4 +32,4 @@ function App() {
   );
 }
 
-export default App;
+export default withRouter(App);
